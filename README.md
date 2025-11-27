@@ -563,7 +563,7 @@ The only thing you need do is to install the following library:
 ```bash
 pip install -U bitsandbytes
 pip install git+https://github.com/huggingface/diffusers
-pip install torch==2.0.0
+pip install "torch>=2.7.1"
 ```
 
 Then you can enjoy your HunyuanDiT text-to-image journey under 6GB GPU VRAM directly!

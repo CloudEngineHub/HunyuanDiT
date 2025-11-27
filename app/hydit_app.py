@@ -45,14 +45,17 @@ args, gen, enhancer = inferencer()
 output_dir = ROOT / f"{args.output_img_path}"
 os.makedirs(output_dir, exist_ok=True)
 strings = get_strings(args.lang)
+Path(args.model_root + "/t2i/controlnet").mkdir(parents=True, exist_ok=True)
 controlnet_list = get_files_with_extension(
     args.model_root + "/t2i/controlnet",
     [".pt", ".safetensors"],
 )
+Path(args.model_root + "/t2i/model").mkdir(parents=True, exist_ok=True)
 module_list = get_files_with_extension(
     args.model_root + "/t2i/model",
     [".pt", ".safetensors"],
 )
+Path(args.model_root + "/t2i/lora").mkdir(parents=True, exist_ok=True)
 lora_list = get_files_with_extension(
     args.model_root + "/t2i/lora",
     [".pt", ".safetensors"],
